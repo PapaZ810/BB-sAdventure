@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://screens/MainMenu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://components/Stars.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Main.gd" type="Script" id=4]
+
+[node name="Main" type="Node"]
+script = ExtResource( 4 )
+
+[node name="Stars" parent="." instance=ExtResource( 2 )]
+moving = false
+star_colors = [ Color( 1, 1, 1, 1 ), Color( 0, 1, 0, 1 ), Color( 0, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
+
+[node name="MainMenu" parent="." instance=ExtResource( 1 )]
+visible = false

@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://galagaTheme.tres" type="Theme" id=1]
+[ext_resource path="res://screens/ControlsScreen.gd" type="Script" id=2]
+[ext_resource path="res://components/ActionRemapComponent.tscn" type="PackedScene" id=3]
+[ext_resource path="res://components/AudioToggle.tscn" type="PackedScene" id=4]
+
+[node name="ControlsScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -80.0
+margin_top = -68.0
+margin_right = 80.0
+margin_bottom = 68.0
+custom_constants/separation = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoveLeftRemapComponent" parent="VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 0.0
+margin_right = 160.0
+margin_bottom = 16.0
+alignment = 0
+label_text = "Move Left"
+button_text = "Move Left"
+button_action = "move_left"
+
+[node name="MoveRightRemapComponent" parent="VBoxContainer" instance=ExtResource( 3 )]
+margin_right = 160.0
+label_text = "Move Right"
+button_text = "Move Right"
+button_action = "move_right"
+
+[node name="FireRemapComponent" parent="VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 40.0
+margin_right = 160.0
+margin_bottom = 56.0
+label_text = "Fire"
+button_text = "fire"
+button_action = "fire"
+
+[node name="PauseRemapComponent" parent="VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 60.0
+margin_right = 160.0
+margin_bottom = 76.0
+label_text = "Pause"
+button_text = "pause"
+button_action = "pause"
+
+[node name="MusicToggle" parent="VBoxContainer" instance=ExtResource( 4 )]
+audio_bus = "Music"
+is_audio_enabled = true
+
+[node name="SoundEfffectsToggle" parent="VBoxContainer" instance=ExtResource( 4 )]
+margin_top = 100.0
+margin_bottom = 116.0
+audio_bus = "Sound Effects"
+is_audio_enabled = true
+
+[node name="BackButton" type="Button" parent="VBoxContainer"]
+margin_top = 120.0
+margin_right = 160.0
+margin_bottom = 136.0
+text = "Back"
