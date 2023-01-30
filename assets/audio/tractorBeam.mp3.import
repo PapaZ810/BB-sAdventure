@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/tractorBeam.mp3-31bfb0ee8976e4742505ad70cc738b5b.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/tractorBeam.mp3"
+dest_files=[ "res://.import/tractorBeam.mp3-31bfb0ee8976e4742505ad70cc738b5b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
