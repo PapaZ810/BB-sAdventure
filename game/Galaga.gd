@@ -138,7 +138,7 @@ func transition_stage():
 	transition_timer.start($LevelStart.stream.get_length() + 1)
 
 func _fire_player_missile():
-	if len(player_missiles) < 2 and $Player.can_shoot and $Player.visible:
+	if len(player_missiles) < 20 and $Player.can_shoot and $Player.visible:
 		$Shoot.play()
 		var missile = PlayerMissile.instance()
 		missile.position = $Player.position
