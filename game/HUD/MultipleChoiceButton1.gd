@@ -1,16 +1,16 @@
-extends Node
+extends Control
 
+var texture = preload('res://assets/images/life.png')
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+export(int) var num_choices = 4
+var screen_size 
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	screen_size = get_viewport_rect().size
 
+func _draw():
+	for i in range(num_choices - 1):
+		draw_texture(texture, Vector2(i * texture.get_width(), screen_size.y - texture.get_height()))
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	update()
