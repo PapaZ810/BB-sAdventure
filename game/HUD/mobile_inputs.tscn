@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/images/indicator-5.png" type="Texture" id=2]
+
+[node name="MobileControls" type="CanvasLayer"]
+
+[node name="2" type="TouchScreenButton" parent="."]
+position = Vector2( 700, 382 )
+scale = Vector2( 11, 6.4375 )
+normal = ExtResource( 2 )
+action = "fire"
+
+[node name="3" type="TouchScreenButton" parent="."]
+
+[node name="4" type="TouchScreenButton" parent="."]

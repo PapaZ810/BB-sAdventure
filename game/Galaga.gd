@@ -180,10 +180,6 @@ func kill_enemy(enemy):
 	update_score(score + enemy.get_points())
 	place_explosion(enemy.get_position())
 	
-	
-		
-
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
