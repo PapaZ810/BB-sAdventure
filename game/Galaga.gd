@@ -34,12 +34,12 @@ func _ready():
 
 func _player_hit(area_2d):
 	if $Player.visible:
-		if area_2d.get_class() == "Enemy":
-			area_2d.is_alive = false
-			kill_enemy(area_2d)
-		elif area_2d.get_class() == "EnemyMissile":
+		var enemy_system = get_node("EnemySystem")
+		enemy_system.call("remove_first_enemy")
+		if area_2d.get_class() == "EnemyMissile":
 			area_2d.queue_free()
 			kill_player()
+			
 
 func kill_player():
 	$PlayerKill.play()
@@ -138,7 +138,7 @@ func transition_stage():
 	transition_timer.start($LevelStart.stream.get_length() + 1)
 
 func _fire_player_missile():
-	if len(player_missiles) < 20 and $Player.can_shoot and $Player.visible:
+	if len(player_missiles) < 10 and $Player.can_shoot and $Player.visible:
 		$Shoot.play()
 		var missile = PlayerMissile.instance()
 		missile.position = $Player.position
@@ -147,6 +147,7 @@ func _fire_player_missile():
 		add_child(missile)
 		player_missiles.append(missile)
 		shots_fired += 1
+		
 
 func _fire_enemy_missile(enemy):
 	var missile = EnemyMissile.instance()
@@ -177,18 +178,7 @@ func kill_enemy(enemy):
 	$EnemyKill.play()
 	update_score(score + enemy.get_points())
 	place_explosion(enemy.get_position())
-
-func missile_hit(area_2d, missile):
-	if area_2d.get_class() == "Enemy":
-		var enemy = area_2d
-		player_missiles.erase(missile)
-		missile.queue_free()
-		enemy.hit()
-		shots_hit += 1
-		if !enemy.is_alive:
-			kill_enemy(enemy)
-		else:
-			$EnemyHit.play()
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
