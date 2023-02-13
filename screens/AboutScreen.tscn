@@ -8,9 +8,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 2 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.5
@@ -26,7 +23,7 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_right = 204.0
+margin_right = 220.0
 margin_bottom = 16.0
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
@@ -46,16 +43,16 @@ __meta__ = {
 
 [node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer"]
 margin_left = 108.0
-margin_right = 204.0
+margin_right = 220.0
 margin_bottom = 16.0
-text = "Nick Rodgers"
+text = "Cole Kartchner"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
 margin_top = 20.0
-margin_right = 204.0
+margin_right = 220.0
 margin_bottom = 20.0
 text = "This game was developed by Nick Rodgers"
 __meta__ = {
@@ -64,6 +61,6 @@ __meta__ = {
 
 [node name="BackButton" type="Button" parent="VBoxContainer"]
 margin_top = 24.0
-margin_right = 204.0
+margin_right = 220.0
 margin_bottom = 40.0
 text = "Back"
