@@ -8,7 +8,6 @@ export(bool) var can_shoot = false setget set_can_shoot
 var screen_size
 var sprite_size
 var num_lives = 3
-var num_choices = 4
 
 func _ready():
 	screen_size = get_viewport_rect().size

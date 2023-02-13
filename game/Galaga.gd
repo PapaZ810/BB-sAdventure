@@ -52,7 +52,6 @@ func kill_player():
 	$Player.position.x = screen_size.x / 2
 	explosion.connect("animation_finished", explosion, "queue_free")
 	$HUD.set_num_lives($Player.num_lives)
-	$HUD.set_multiple_choice($Player.num_choices)
 
 	var respawn_length = 5
 
@@ -96,7 +95,6 @@ func _start_game():
 	show_player_timer.connect("timeout", $Player, "show")
 	show_player_timer.connect("timeout", $HUD, "set_badge_visible", [true])
 	show_player_timer.connect("timeout", $HUD, "set_lives_visible", [true])
-	show_player_timer.connect("timeout", $HUD, "set_choices_visible", [true])
 	show_player_timer.connect("timeout", show_player_timer, "queue_free")
 
 	add_child(show_player_timer)

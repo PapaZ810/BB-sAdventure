@@ -2,14 +2,15 @@ extends Node2D
 
 export(int) var num_rows = 6
 export(int) var num_cols = 10
-export(bool) var moving = true setget set_moving
+#export(bool) var moving = false setget set_moving
+export(bool) var moving = false 
 export(int) var move_rate = 15
 export(int) var enemy_move_rate = 100
 export(int) var cell_size = 16
 export(int) var num_bounces = 3
 export(int) var num_breaths = 2
 export(int) var min_cell_spacing = 2
-export(bool) var show_grid = false
+export(bool) var show_grid = true
 export(bool) var show_grid_positions = false
 
 class Cell:
@@ -32,7 +33,7 @@ var font
 var bounce_count = 0
 var breath_count = 0
 enum {left, right, breathing_out, breathing_in}
-var grid_top_left = Vector2(0, 16)
+var grid_top_left = Vector2(384, 16)
 
 var move_direction = right
 var last_direction = move_direction
@@ -49,8 +50,8 @@ func _ready():
 			grid[i].append(Cell.new(Vector2(i, j), cell_size))
 	_init_grid_positions()
 
-func set_moving(is_moving):
-	moving = is_moving
+#func set_moving(is_moving):
+	#moving = is_moving
 
 func get_grid_width():
 	return num_cols * cell_size + (num_cols - 1) * cell_spacing

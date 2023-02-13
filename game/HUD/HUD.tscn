@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://game/HUD/Lives.gd" type="Script" id=1]
 [ext_resource path="res://galagaTheme.tres" type="Theme" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://game/HUD/PlayerOneLabel.gd" type="Script" id=4]
 [ext_resource path="res://game/HUD/HUDTheme.tres" type="Theme" id=5]
 [ext_resource path="res://game/HUD/StageBadge.gd" type="Script" id=6]
-[ext_resource path="res://game/HUD/MultipleChoiceButton1.gd" type="Script" id=7]
 
 [node name="HUD" type="Control"]
 anchor_right = 1.0
@@ -30,9 +29,6 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="MultipleChoiceButton1" type="Control" parent="."]
-script = ExtResource( 7 )
 
 [node name="PlayerOneLabel" type="Label" parent="."]
 margin_left = 32.0
