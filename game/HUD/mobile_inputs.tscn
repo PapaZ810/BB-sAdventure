@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/images/button.png" type="Texture" id=1]
+
+[sub_resource type="Theme" id=1]
+
+[node name="MobileControls" type="CanvasLayer"]
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="2" type="TouchScreenButton" parent="."]
+position = Vector2( 637, 333 )
+scale = Vector2( 0.173333, 0.176 )
+normal = ExtResource( 1 )
+action = "fire"
+
+[node name="5" type="TouchScreenButton" parent="."]
+position = Vector2( 736, 334 )
+scale = Vector2( 0.17, 0.179 )
+normal = ExtResource( 1 )
+action = "fire"
+
+[node name="6" type="TouchScreenButton" parent="."]
+position = Vector2( 835, 332 )
+scale = Vector2( 0.17, 0.179 )
+normal = ExtResource( 1 )
+action = "fire"
+
+[node name="7" type="TouchScreenButton" parent="."]
+position = Vector2( 536, 334 )
+scale = Vector2( 0.17, 0.179 )
+normal = ExtResource( 1 )
+action = "fire"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 303.94
+margin_top = 155.111
+margin_right = 463.94
+margin_bottom = 170.111
+theme = SubResource( 1 )
+fit_content_height = true

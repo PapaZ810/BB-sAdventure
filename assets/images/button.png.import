@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tractor-beam.png-3a14bb2f59ea5214cdd4d2251bdd5a59.stex"
+path="res://.import/button.png-7ad2fecf8e41de8db458bf41ec642058.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/tractor-beam.png"
-dest_files=[ "res://.import/tractor-beam.png-3a14bb2f59ea5214cdd4d2251bdd5a59.stex" ]
+source_file="res://assets/images/button.png"
+dest_files=[ "res://.import/button.png-7ad2fecf8e41de8db458bf41ec642058.stex" ]
 
 [params]
 
