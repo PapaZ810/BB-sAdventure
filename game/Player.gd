@@ -23,6 +23,9 @@ func _process(delta):
 	if Input.is_action_pressed("move_right"):
 		velocity += 1
 	if Input.is_action_just_pressed("fire"):
+		#check if it is correct based on the question asked 
+	
+	
 		
 		emit_signal("player_fire")
 	position.x += velocity * move_rate * delta
