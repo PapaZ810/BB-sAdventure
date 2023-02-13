@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/fighter-captured.mp3-0e4452dac75ade931b154c484f31814c.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/fighter-captured.mp3"
+dest_files=[ "res://.import/fighter-captured.mp3-0e4452dac75ade931b154c484f31814c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
