@@ -138,7 +138,10 @@ func transition_stage():
 	transition_timer.start($LevelStart.stream.get_length() + 1)
 
 func _fire_player_missile():
+<<<<<<< Updated upstream
 	
+=======
+>>>>>>> Stashed changes
 	if len(player_missiles) < 10 and $Player.can_shoot and $Player.visible:
 		$Shoot.play()
 		var missile = PlayerMissile.instance()
