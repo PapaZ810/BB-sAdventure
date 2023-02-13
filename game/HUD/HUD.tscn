@@ -10,18 +10,19 @@
 [node name="HUD" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 3.0
+margin_right = 3.0
+margin_bottom = 7.0
 theme = ExtResource( 5 )
 script = ExtResource( 3 )
 __meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
+"_edit_group_": true
 }
 
 [node name="Lives" type="Control" parent="."]
+margin_right = 3.05176e-05
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="StageBadge" type="Control" parent="."]
 script = ExtResource( 6 )
@@ -36,9 +37,6 @@ margin_bottom = 8.0
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "1UP"
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="BlinkTimer" type="Timer" parent="PlayerOneLabel"]
 
@@ -56,9 +54,6 @@ margin_right = 56.0
 margin_bottom = 16.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "00"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="HighScore" type="Label" parent="."]
 margin_left = 120.0
