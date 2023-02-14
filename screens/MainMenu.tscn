@@ -14,29 +14,33 @@ script = ExtResource( 1 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_left = 0.5
+anchor_top = 0.05
 anchor_right = 0.5
-margin_left = -199.0
-margin_top = -6.0
-margin_right = 202.0
-margin_bottom = 197.0
+anchor_bottom = 0.05
+margin_left = -242.0
+margin_top = 3.0
+margin_right = 241.0
+margin_bottom = 264.0
+rect_scale = Vector2( 1.1, 1.1 )
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 6
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchor_left = 0.77
-anchor_top = 0.812
-anchor_right = 0.77
-anchor_bottom = 0.812
-margin_left = -61.48
-margin_top = -62.856
-margin_right = 71.52
-margin_bottom = 49.144
+anchor_left = 0.5
+anchor_top = 0.7
+anchor_right = 0.5
+anchor_bottom = 0.7
+margin_left = -56.0
+margin_top = -72.2
+margin_right = 32.0
+margin_bottom = 38.6
+rect_scale = Vector2( 1.5, 1.5 )
 custom_constants/separation = 16
 alignment = 1
 
 [node name="NewGameButton" type="Button" parent="VBoxContainer"]
-margin_right = 133.0
+margin_right = 88.0
 margin_bottom = 16.0
 text = "New Game"
 __meta__ = {
@@ -45,19 +49,19 @@ __meta__ = {
 
 [node name="HighScoresButton" type="Button" parent="VBoxContainer"]
 margin_top = 32.0
-margin_right = 133.0
+margin_right = 88.0
 margin_bottom = 48.0
 theme = SubResource( 1 )
 text = "High Scores"
 
 [node name="ControlsButton" type="Button" parent="VBoxContainer"]
 margin_top = 64.0
-margin_right = 133.0
+margin_right = 88.0
 margin_bottom = 80.0
 text = "Controls"
 
 [node name="AboutButton" type="Button" parent="VBoxContainer"]
 margin_top = 96.0
-margin_right = 133.0
+margin_right = 88.0
 margin_bottom = 112.0
 text = "About"
