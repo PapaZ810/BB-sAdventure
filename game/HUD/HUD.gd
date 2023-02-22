@@ -32,6 +32,11 @@ func _ready():
 	screen_size = get_viewport_rect().size
 	$StageBadge.visible = false
 	$Lives.visible = false
+	
+func _on_show_mobile_inputs():
+	var mobile_inputs_scene = load("res://mobile_inputs.tscn")
+	var mobile_inputs_instance = mobile_inputs_scene.instance()
+	add_child(mobile_inputs_instance)	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

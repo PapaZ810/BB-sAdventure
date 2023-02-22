@@ -4,6 +4,7 @@ signal ship_flying
 signal ship_stopped
 signal quit_game
 signal game_over
+signal out_of_ammo
 
 var stage = 1
 var score = 0
@@ -139,7 +140,7 @@ func transition_stage():
 
 func _fire_player_missile():
 
-	if len(player_missiles) < 10 and $Player.can_shoot and $Player.visible:
+	if len(player_missiles) < 10 and shots_fired < 10 and $Player.can_shoot and $Player.visible:
 		$Shoot.play()
 		var missile = PlayerMissile.instance()
 		missile.position = $Player.position
@@ -148,6 +149,8 @@ func _fire_player_missile():
 		add_child(missile)
 		player_missiles.append(missile)
 		shots_fired += 1
+		if shots_fired == 10 :
+			get_tree().change_scene("res://screens/mobile_inputs.tscn")
 
 func _fire_enemy_missile(enemy):
 	var missile = EnemyMissile.instance()
