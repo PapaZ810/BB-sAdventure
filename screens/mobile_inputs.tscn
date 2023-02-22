@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/images/button.png" type="Texture" id=1]
+[ext_resource path="res://assets/images/24832-2-right-arrow-transparent-image.png" type="Texture" id=2]
 
 [sub_resource type="Theme" id=1]
 
@@ -10,28 +11,23 @@ __meta__ = {
 }
 
 [node name="2" type="TouchScreenButton" parent="."]
-position = Vector2( 637, 333 )
+position = Vector2( 722, 508 )
+rotation = 3.14159
 scale = Vector2( 0.173333, 0.176 )
-normal = ExtResource( 1 )
-action = "fire"
+normal = ExtResource( 2 )
+action = "move_left"
 
 [node name="5" type="TouchScreenButton" parent="."]
-position = Vector2( 736, 334 )
-scale = Vector2( 0.17, 0.179 )
-normal = ExtResource( 1 )
-action = "fire"
-
-[node name="6" type="TouchScreenButton" parent="."]
-position = Vector2( 835, 332 )
+position = Vector2( 130, 397 )
 scale = Vector2( 0.17, 0.179 )
 normal = ExtResource( 1 )
 action = "fire"
 
 [node name="7" type="TouchScreenButton" parent="."]
-position = Vector2( 536, 334 )
-scale = Vector2( 0.17, 0.179 )
-normal = ExtResource( 1 )
-action = "fire"
+position = Vector2( 770, 431 )
+scale = Vector2( 0.197619, 0.204762 )
+normal = ExtResource( 2 )
+action = "move_right"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 anchor_left = 0.5
