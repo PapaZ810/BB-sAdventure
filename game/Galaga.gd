@@ -150,7 +150,13 @@ func _fire_player_missile():
 		player_missiles.append(missile)
 		shots_fired += 1
 		if shots_fired == 10 :
-			get_tree().change_scene("res://screens/mobile_inputs.tscn")
+			get_tree().paused = true
+			var touch_button_scene = load('res://screens/multiple.tscn')
+			# Create a new instance of the TouchButton scene
+			var touch_button = touch_button_scene.instance()
+			# Add the new TouchButton node to the current scene
+			get_tree().get_current_scene().add_child(touch_button)
+
 
 func _fire_enemy_missile(enemy):
 	var missile = EnemyMissile.instance()

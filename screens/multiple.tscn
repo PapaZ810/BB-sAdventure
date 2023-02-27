@@ -1,0 +1,99 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.156863, 0.164706, 0.294118, 1 )
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 257.0
+margin_top = 173.0
+margin_right = 302.0
+margin_bottom = 213.0
+rect_scale = Vector2( 6.249, 4.677 )
+bbcode_text = "1+1 =?"
+text = "1+1 =?"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 315.0
+margin_top = 352.0
+margin_right = 355.0
+margin_bottom = 392.0
+rect_scale = Vector2( 1.92612, 1.7016 )
+rect_pivot_offset = Vector2( 81.1126, 55.2603 )
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="MarginContainer/Panel"]
+margin_left = 6.87004
+margin_top = 6.48282
+margin_right = 20.87
+margin_bottom = 20.4828
+rect_scale = Vector2( 1.947, 2.207 )
+text = "2"
+align = 1
+valign = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+margin_left = 411.233
+margin_top = 324.969
+margin_right = 451.233
+margin_bottom = 364.969
+rect_scale = Vector2( 1.92612, 1.7016 )
+rect_pivot_offset = Vector2( 40.2028, 19.9987 )
+
+[node name="Panel" type="Panel" parent="MarginContainer2"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="MarginContainer2/Panel"]
+margin_left = 6.74931
+margin_top = 7.08882
+margin_right = 20.7493
+margin_bottom = 38.0888
+rect_scale = Vector2( 1.947, 2.207 )
+text = "6
+"
+align = 1
+valign = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+visible = false
+margin_left = 315.0
+margin_top = 352.0
+margin_right = 355.0
+margin_bottom = 392.0
+rect_scale = Vector2( 1.92612, 1.7016 )
+rect_pivot_offset = Vector2( 40.2028, 19.9987 )
+
+[node name="Panel" type="Panel" parent="MarginContainer3"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="MarginContainer3/Panel"]
+anchor_left = -4.764
+anchor_top = -2.304
+anchor_right = -4.764
+anchor_bottom = -2.304
+margin_left = 307.496
+margin_top = 66.3204
+margin_right = 321.496
+margin_bottom = 97.3204
+rect_scale = Vector2( 1.947, 2.207 )
+text = "4"
+align = 1
+valign = 1

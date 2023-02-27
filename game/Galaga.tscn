@@ -64,8 +64,6 @@ margin_top = 1.0
 margin_right = -1.0
 margin_bottom = 1.0
 
-[node name="MobileControls" parent="CanvasLayer" instance=ExtResource( 15 )]
-
 [node name="EnemyKill" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
 bus = "Sound Effects"
@@ -85,3 +83,5 @@ bus = "Music"
 
 [node name="GameOver" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
+
+[node name="MobileControls" parent="." instance=ExtResource( 15 )]
