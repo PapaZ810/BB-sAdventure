@@ -53,16 +53,20 @@ __meta__ = {
 [node name="Background" type="ColorRect" parent="CanvasLayer/PauseOverlay"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 55.0
+margin_top = 492.0
+margin_right = 55.0
+margin_bottom = 492.0
 color = Color( 0, 0, 0, 0.686275 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PauseScreen" parent="CanvasLayer/PauseOverlay" instance=ExtResource( 8 )]
-margin_left = -1.0
-margin_top = 1.0
-margin_right = -1.0
-margin_bottom = 1.0
+margin_left = 3.0
+margin_top = 4.0
+margin_right = 3.0
+margin_bottom = 4.0
 
 [node name="EnemyKill" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )

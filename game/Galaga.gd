@@ -138,6 +138,7 @@ func transition_stage():
 	add_child(transition_timer)
 	transition_timer.start($LevelStart.stream.get_length() + 1)
 
+
 func _fire_player_missile():
 
 	if len(player_missiles) < 10 and shots_fired < 10 and $Player.can_shoot and $Player.visible:
@@ -150,12 +151,19 @@ func _fire_player_missile():
 		player_missiles.append(missile)
 		shots_fired += 1
 		if shots_fired == 10 :
-			get_tree().paused = true
 			var touch_button_scene = load('res://screens/multiple.tscn')
 			# Create a new instance of the TouchButton scene
-			var touch_button = touch_button_scene.instance()
+			var multiple_button = touch_button_scene.instance()
 			# Add the new TouchButton node to the current scene
-			get_tree().get_current_scene().add_child(touch_button)
+			get_tree().get_current_scene().add_child(multiple_button)
+			if Input.is_action_pressed('choose'):
+				shots_fired = 0
+				# Remove the touch_button node from the scene
+				multiple_button.queue_free()
+
+				
+					
+					
 
 
 func _fire_enemy_missile(enemy):

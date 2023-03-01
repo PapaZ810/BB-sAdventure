@@ -7,7 +7,8 @@ var screens = {
 	'about': preload('res://screens/AboutScreen.tscn').instance(),
 	'game': preload('res://game/Galaga.tscn').instance(),
 	'game-over': preload('res://screens/GameOverScreen.tscn').instance(),
-	'inputs': preload("res://screens/choices.tscn").instance()
+	'inputs': preload("res://screens/touch_buttons.tscn").instance()
+
 	
 }
 
