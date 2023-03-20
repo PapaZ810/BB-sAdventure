@@ -6,7 +6,8 @@ var screens = {
 	'controls': preload("res://screens/ControlsScreen.tscn").instance(),
 	'about': preload('res://screens/AboutScreen.tscn').instance(),
 	'game': preload('res://game/Galaga.tscn').instance(),
-	'game-over': preload('res://screens/GameOverScreen.tscn').instance()
+	'game-over': preload('res://screens/GameOverScreen.tscn').instance(),
+	'level-select': preload('res://screens/LevelSelect.tscn').instance()
 }
 
 var current_screen = ""
@@ -74,9 +75,11 @@ func _change_screen_deferred(screen):
 	container.add_child(screens[current_screen])
 	connect_navigation_buttons(screens[current_screen])
 	if current_screen == "game":
-		connect_game_signals()
+		screens["game"]._ready()
 	if current_screen == "high-scores":
 		screens["high-scores"].load_high_scores()
+	if current_screen == "level-select":
+		screens["level-select"]._ready()
 
 func quit_game():
 	change_screen("main-menu")

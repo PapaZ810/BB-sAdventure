@@ -62,7 +62,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Galaga"
+config/name="BB's Space Adventure"
 run/main_scene="res://Main.tscn"
 config/icon="res://favicon.png"
 
@@ -76,10 +76,15 @@ RestHandler="*res://addons/github-integration/scenes/RestHandler.tscn"
 
 [display]
 
+<<<<<<< Updated upstream
 window/size/width=960
 window/size/height=540
 window/size/test_width=960
 window/size/test_height=540
+=======
+window/size/test_width=1024
+window/size/test_height=600
+>>>>>>> Stashed changes
 window/handheld/orientation="portrait"
 window/stretch/mode="2d"
 window/stretch/aspect="keep"

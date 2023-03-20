@@ -8,7 +8,7 @@ signal about_pressed
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	navigation_buttons.append(
-		NavigationButton.new($VBoxContainer/NewGameButton, "new_game_pressed", "game")
+		NavigationButton.new($VBoxContainer/NewGameButton, "new_game_pressed", "level-select")
 	)
 	navigation_buttons.append(
 		NavigationButton.new($VBoxContainer/HighScoresButton, "high_scores_pressed", "high-scores")
