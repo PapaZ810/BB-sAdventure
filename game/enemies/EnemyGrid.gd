@@ -33,7 +33,7 @@ var font
 var bounce_count = 0
 var breath_count = 0
 enum {left, right, breathing_out, breathing_in}
-var grid_top_left = Vector2(384, 16)
+var grid_top_left = Vector2(0, 0)
 
 var move_direction = right
 var last_direction = move_direction
@@ -44,6 +44,7 @@ func _ready():
 	font.font_data = load("res://assets/PressStart2P-Regular.ttf")
 	font.size = 4
 	screen_size = get_viewport_rect().size
+	print(get_viewport_rect().size.x / 2)
 	for i in range(num_rows):
 		grid.append([])
 		for j in range(num_cols):
@@ -60,7 +61,7 @@ func get_grid_height():
 	return num_rows * cell_size + (num_rows - 1) * cell_spacing
 
 func get_grid_center():
-	var grid_center = grid_top_left
+	var grid_center = Vector2((get_viewport_rect().size.x / 2), 16)
 	grid_center.x += get_grid_width() / 2
 	grid_center.y += get_grid_height() / 2
 	return grid_center
@@ -71,7 +72,7 @@ func get_cell_center(grid_pos):
 	cell_center.x += floor(cell_size / 2)
 	cell_center.y = grid_pos.x * cell_size + grid_pos.x * cell_spacing
 	cell_center.y += floor(cell_size / 2)
-	cell_center += grid_top_left
+	cell_center += Vector2((get_viewport_rect().size.x / 2), 16)
 	return cell_center
 
 func _init_grid_positions():
@@ -80,10 +81,10 @@ func _init_grid_positions():
 			grid[i][j].position = get_cell_center(grid[i][j].grid_position)
 
 func grid_distance_to_right_edge():
-	return screen_size.x - (grid_top_left.x + get_grid_width())
+	return screen_size.x - Vector2((get_viewport_rect().size.x / 2), 16).x + get_grid_width()
 
 func grid_distance_to_left_edge():
-	return grid_top_left.x
+	return Vector2((get_viewport_rect().size.x / 2), 16).x
 
 func move_into_grid(enemy):
 	enemies_to_place.append(enemy)
@@ -150,7 +151,7 @@ func update_grid_positions(delta):
 			else:
 				breath_count += 1
 		cell_spacing += cell_spacing_change
-	grid_top_left.x += move_amount
+	Vector2((get_viewport_rect().size.x / 2), 16).x += move_amount
 	for row in grid:
 		for cell in row:
 			cell.position = get_cell_center(cell.grid_position)
