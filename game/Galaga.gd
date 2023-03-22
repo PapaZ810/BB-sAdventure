@@ -1,9 +1,11 @@
 extends Node2D
 
+
 signal ship_flying
 signal ship_stopped
 signal quit_game
 signal game_over
+signal out_of_ammo
 
 var stage = 1
 var score = 0
@@ -15,12 +17,14 @@ const PlayerMissile = preload('./PlayerMissile.tscn')
 const EnemyMissile = preload('./EnemyMissile.tscn')
 const EnemyExplosion = preload('./enemies/EnemyExplosion.tscn')
 const PlayerExplosion = preload('./PlayerExplosion.tscn')
-
+var touch_button_scene = load('res://screens/multiple.tscn')
+var multiple_button = touch_button_scene.instance()
 var shots_fired = 0
 var shots_hit = 0
 
 func _ready():
 	screen_size = get_viewport_rect().size
+	
 	$Player.connect("player_fire", self, "_fire_player_missile")
 	$Player.connect("area_entered", self, "_player_hit")
 	$CanvasLayer/PauseOverlay/PauseScreen.connect('quit_pressed', self, "emit_signal", ["quit_game"])
@@ -136,10 +140,11 @@ func transition_stage():
 	transition_timer.connect("timeout", transition_timer, "queue_free")
 	add_child(transition_timer)
 	transition_timer.start($LevelStart.stream.get_length() + 1)
+	
+
 
 func _fire_player_missile():
-
-	if len(player_missiles) < 10 and $Player.can_shoot and $Player.visible:
+	if len(player_missiles) < 10 and shots_fired < 10 and $Player.can_shoot and $Player.visible:
 		$Shoot.play()
 		var missile = PlayerMissile.instance()
 		missile.position = $Player.position
@@ -148,6 +153,16 @@ func _fire_player_missile():
 		add_child(missile)
 		player_missiles.append(missile)
 		shots_fired += 1
+		if shots_fired == 10 :
+			# Add the new TouchButton node to the current scene
+			get_tree().get_current_scene().add_child(multiple_button)
+			if Input.is_action_pressed('choose'): # this is not working
+				# (gets upto here)
+				shots_fired = 0 # this should reset
+				multiple_button.queue_free()
+				# Remove the touch_button node from the scene
+			
+			# works upto here 
 
 func _fire_enemy_missile(enemy):
 	var missile = EnemyMissile.instance()
@@ -165,6 +180,7 @@ func place_explosion(pos):
 	explosion.connect("animation_finished", explosion, "queue_free")
 	add_child(explosion)
 	explosion.playing = true
+
 
 func update_score(new_score):
 	score = new_score

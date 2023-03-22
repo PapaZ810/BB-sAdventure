@@ -24,5 +24,7 @@ func _process(delta):
 		velocity += 1
 	if Input.is_action_just_pressed("fire"):
 		emit_signal("player_fire")
+		#check if it is correct based on the question asked 
+	
 	position.x += velocity * move_rate * delta
 	position.x = clamp(position.x, sprite_size.x / 2, screen_size.x - sprite_size.x / 2)
