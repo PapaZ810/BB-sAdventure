@@ -69,29 +69,17 @@ config/icon="res://favicon.png"
 [autoload]
 
 CurvePoints="*res://game/enemies/CurvePoints.gd"
-PluginSettings="*res://addons/github-integration/scripts/PluginSettings.gd"
-IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
-UserData="*res://addons/github-integration/scripts/user_data.gd"
-RestHandler="*res://addons/github-integration/scenes/RestHandler.tscn"
 
 [display]
 
-<<<<<<< Updated upstream
+
 window/size/width=960
 window/size/height=540
 window/size/test_width=960
 window/size/test_height=540
-=======
-window/size/test_width=1024
-window/size/test_height=600
->>>>>>> Stashed changes
 window/handheld/orientation="portrait"
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
-
-[editor_plugins]
-
-enabled=PoolStringArray(  )
 
 [gdnative]
 
@@ -119,10 +107,6 @@ pause={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
-
-[input_devices]
-
-pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
