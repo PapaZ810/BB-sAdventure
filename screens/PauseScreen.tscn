@@ -36,9 +36,6 @@ margin_left = -66.0
 margin_top = -63.4
 margin_right = 74.0
 margin_bottom = 37.6
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ResumeButton" type="Button" parent="VBoxContainer"]
 margin_right = 140.0
