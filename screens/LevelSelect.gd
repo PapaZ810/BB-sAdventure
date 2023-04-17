@@ -1,10 +1,6 @@
 extends Screen
 
-signal planet_1_pressed
-signal planet_2_pressed
 signal back
-signal planet_3_pressed
-signal planet_4_pressed
 signal go
 
 onready var sprite = $Sprite
