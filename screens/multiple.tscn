@@ -14,7 +14,6 @@ bbcode_text = "1+1 =?"
 text = "1+1 =?"
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
-pause_mode = 2
 position = Vector2( 208, 265 )
 scale = Vector2( 0.0442708, 0.0432292 )
 normal = ExtResource( 1 )
@@ -25,18 +24,18 @@ pause_mode = 2
 position = Vector2( 311, 265 )
 scale = Vector2( 0.0442708, 0.0432292 )
 normal = ExtResource( 1 )
-action = "choose"
+action = "select"
 
 [node name="TouchScreenButton3" type="TouchScreenButton" parent="."]
 pause_mode = 2
 position = Vector2( 410, 266 )
 scale = Vector2( 0.0442708, 0.0432292 )
 normal = ExtResource( 1 )
-action = "choose"
+action = "select"
 
 [node name="TouchScreenButton4" type="TouchScreenButton" parent="."]
 pause_mode = 2
 position = Vector2( 504, 268 )
 scale = Vector2( 0.0442708, 0.0432292 )
 normal = ExtResource( 1 )
-action = "choose"
+action = "select"

@@ -148,14 +148,7 @@ func _reset_shots_fired():
 	shots_fired = 0
 	get_tree().get_root().remove_child(multiple_button)
 	get_tree().paused = false
-				
-	#root_node = get_tree().get_root()
-	#for i in range(root_node.get_child_count()):
-	#	if root_node.get_child(i) == multiple_button:
-	#multiple_button.queue_free()
 	
-	
-
 func _fire_player_missile():
 	if len(player_missiles) < 10 and shots_fired < 10 and $Player.can_shoot and $Player.visible:
 		$Shoot.play()

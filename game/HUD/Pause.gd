@@ -6,6 +6,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("pause"):
+	if Input.is_action_just_pressed("select"):
+		print("select has just been pressed ")
 		get_tree().paused = !get_tree().paused
 	self.visible = get_tree().paused
