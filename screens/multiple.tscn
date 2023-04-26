@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/images/options.png" type="Texture" id=1]
+[ext_resource path="res://screens/math.gd" type="Script" id=2]
 
 [node name="c" type="CanvasLayer"]
 
@@ -12,6 +13,7 @@ margin_bottom = 213.0
 rect_scale = Vector2( 6.249, 4.677 )
 bbcode_text = "1+1 =?"
 text = "1+1 =?"
+script = ExtResource( 2 )
 
 [node name="b2" type="TouchScreenButton" parent="."]
 pause_mode = 2

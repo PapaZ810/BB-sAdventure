@@ -1,23 +1,21 @@
 extends RichTextLabel
 
-
+var quest = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	load_csv()
 
-func load_csv() :
+func load_csv() -> void:
 	var file = File.new()
-	var math_data = file.open("res://math.csv",file.READ)
-	file.open(math_data, File.READ)
-	var contents = file.get_as_text()
-	file.close()
+	var error = file.open("res://screens/Book1.csv", File.READ)
 
-	var rows = contents.split("\n")
-	var data = []
+	if error == OK:
+		while not file.eof_reached():
+			var line = file.get_line()
+			quest.append(line)
 
-	for row in rows:
-		data.append(row.split(","))
+		file.close()
 
-	return data
-	
+	else:
+		print("Error opening file:", error)
