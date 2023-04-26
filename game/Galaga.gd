@@ -26,6 +26,7 @@ func _ready():
 	screen_size = get_viewport_rect().size
 	
 	$Player.connect("player_fire", self, "_fire_player_missile")
+	$Player.connect("refill", self, "_reset_shots_fired")
 	$Player.connect("area_entered", self, "_player_hit")
 	$CanvasLayer/PauseOverlay/PauseScreen.connect('quit_pressed', self, "emit_signal", ["quit_game"])
 	$Player.position.y = floor(screen_size.y - $Player.sprite_size.y * 1.5)
@@ -35,6 +36,7 @@ func _ready():
 	$CoinInserted.play()
 	$EnemySystem.connect("fire_enemy_missile", self, "_fire_enemy_missile")
 	$EnemySystem.connect("stage_complete", self, "transition_stage")
+	shots_fired = 0 
 
 func _player_hit(area_2d):
 	if $Player.visible:
@@ -56,6 +58,7 @@ func kill_player():
 	$Player.position.x = screen_size.x / 2
 	explosion.connect("animation_finished", explosion, "queue_free")
 	$HUD.set_num_lives($Player.num_lives)
+	
 
 	var respawn_length = 5
 
@@ -140,9 +143,12 @@ func transition_stage():
 	transition_timer.connect("timeout", transition_timer, "queue_free")
 	add_child(transition_timer)
 	transition_timer.start($LevelStart.stream.get_length() + 1)
+
+func _reset_shots_fired():
+	shots_fired = 0
+	get_tree().get_root().remove_child(multiple_button)
+	get_tree().paused = false
 	
-
-
 func _fire_player_missile():
 	if len(player_missiles) < 10 and shots_fired < 10 and $Player.can_shoot and $Player.visible:
 		$Shoot.play()
@@ -153,16 +159,13 @@ func _fire_player_missile():
 		add_child(missile)
 		player_missiles.append(missile)
 		shots_fired += 1
-		if shots_fired == 10 :
-			# Add the new TouchButton node to the current scene
-			get_tree().get_current_scene().add_child(multiple_button)
-			if Input.is_action_pressed('choose'): # this is not working
-				# (gets upto here)
-				shots_fired = 0 # this should reset
-				multiple_button.queue_free()
-				# Remove the touch_button node from the scene
+		if shots_fired == 10:
+			get_tree().paused = true
+			get_tree().get_root().add_child(multiple_button)
 			
-			# works upto here 
+			
+				
+
 
 func _fire_enemy_missile(enemy):
 	var missile = EnemyMissile.instance()

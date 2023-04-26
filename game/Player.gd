@@ -1,6 +1,7 @@
 extends Area2D
 
 signal player_fire
+signal refill 
 
 export(int) var move_rate = 100
 export(bool) var can_shoot = false setget set_can_shoot
@@ -24,6 +25,11 @@ func _process(delta):
 		velocity += 1
 	if Input.is_action_just_pressed("fire"):
 		emit_signal("player_fire")
+		print('signal emitted player_fire')
+	if Input.is_action_pressed("choose"): # this works so we go 
+		print("select pressed")
+		emit_signal("refill") 
+		print('signal emitted refill')
 		#check if it is correct based on the question asked 
 	
 	position.x += velocity * move_rate * delta

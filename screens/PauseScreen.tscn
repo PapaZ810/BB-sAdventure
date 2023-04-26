@@ -5,6 +5,7 @@
 [ext_resource path="res://galagaTheme.tres" type="Theme" id=3]
 
 [node name="PauseScreen" type="Control"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 6.0
@@ -36,9 +37,6 @@ margin_left = -66.0
 margin_top = -63.4
 margin_right = 74.0
 margin_bottom = 37.6
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ResumeButton" type="Button" parent="VBoxContainer"]
 margin_right = 140.0

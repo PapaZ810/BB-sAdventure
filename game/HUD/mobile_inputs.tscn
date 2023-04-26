@@ -40,3 +40,5 @@ margin_right = 463.94
 margin_bottom = 170.111
 theme = SubResource( 1 )
 fit_content_height = true
+
+[node name="Node" type="Node" parent="."]
