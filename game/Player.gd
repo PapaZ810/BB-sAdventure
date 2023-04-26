@@ -26,7 +26,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("fire"):
 		emit_signal("player_fire")
 		print('signal emitted player_fire')
-	if Input.is_action_pressed("select"): # this works so we go 
+	if Input.is_action_pressed("choose"): # this works so we go 
 		print("select pressed")
 		emit_signal("refill") 
 		print('signal emitted refill')
